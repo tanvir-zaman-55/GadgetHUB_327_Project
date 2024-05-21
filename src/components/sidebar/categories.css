@@ -1,0 +1,11 @@
+.sidebarCategory {
+margin-top: 50px;
+
+}
+
+.sidebarItems {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: be_a_seller.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: be_a_seller.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState, useContext } from "react";
+import { ShopContext } from "../../context/shop_context";
+import "./be_a_seller.css"; // PascalCase for CSS file name
+import { useProducts } from "../../products";
+/**
+ * Seller component allows users to add new products.
+ * @component
+ * @returns {JSX.Element} The rendered Seller component.
+ */
+export const Seller = () => {
+    const { addProduct } = useContext(ShopContext);
+    const [productName, setProductName] = useState("");
+    const [price, setPrice] = useState("");
+    const [productImage, setProductImage] = useState(null);
+
+    const products = useProducts();
+    /**
+     * Handles form submission to add a new product.
+     * @param {object} e - The event object.
+     */
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!productImage) {
+            alert("Please select an image");
+            return;
+        }
+
+        const base64Image = await convertToBase64(productImage);
+
+        // Create a new product object
+        const newProduct = {
+            id: Date.now(), // Generate a unique id
+            productName,
+            price: parseFloat(price),
+            productImage: base64Image, // Set productImage as base64 string
+        };
+
+        // Call the addProduct function with the new product
+        products.push(newProduct);
+
+        // Reset form fields
+        setProductName("");
+        setPrice("");
+        setProductImage(null);
+    };
+    /**
+     * Handles image file input change event.
+     * @param {object} e - The event object.
+     */
+    const handleImageChange = (e) => {
+        setProductImage(e.target.files[0]); // Set productImage to the file object
+    };
+    /**
+     * Converts a file to a base64 string.
+     * @param {File} file - The file to convert.
+     * @returns {Promise&lt;string>} A promise that resolves to the base64 string.
+     */
+    const convertToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = (error) => reject(error);
+        });
+    };
+
+    return (
+        &lt;div className="Seller"> {/* PascalCase for CSS class name */}
+            &lt;h2>Product Info&lt;/h2>
+            &lt;form onSubmit={handleSubmit} className="ProductForm"> {/* PascalCase for CSS class name */}
+                &lt;div className="FormGroup"> {/* PascalCase for CSS class name */}
+                    &lt;label htmlFor="productName">&lt;h5>Product Name:&lt;/h5>&lt;/label>
+                    &lt;input
+                        type="text"
+                        id="productName"
+                        value={productName}
+                        onChange={(e) => setProductName(e.target.value)}
+                        required
+                    />
+                &lt;/div>
+                &lt;div className="FormGroup"> {/* PascalCase for CSS class name */}
+                    &lt;label htmlFor="price">&lt;h5>Product Price:&lt;/h5>&lt;/label>
+                    &lt;input
+                        type="number"
+                        id="price"
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                        required
+                    />
+                &lt;/div>
+                &lt;div className="FormGroup"> {/* PascalCase for CSS class name */}
+                    &lt;label htmlFor="productImage">&lt;h5>Product Image:&lt;/h5>&lt;/label>
+                    &lt;input
+                        type="file"
+                        id="productImage"
+                        accept="image/*"
+                        onChange={handleImageChange}
+                        required
+                    />
+                &lt;/div>
+                &lt;button type="submit">Upload Product&lt;/button>
+            &lt;/form>
+        &lt;/div>
+    );
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Seller">Seller</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Fri May 24 2024 02:02:30 GMT+0600 (Bangladesh Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

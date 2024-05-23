@@ -8,7 +8,10 @@ import { ShopContextProvider } from "./context/shop_context";
 import { Seller } from "./pages/seller/be_a_seller";
 import { Cart } from "./pages/cart/cart";
 import { ProductProvider } from "./products";
-
+/**
+ * Main component representing the entire application.
+ * @returns {JSX.Element} The rendered App component.
+ */
 function App() {
     return (
         <div className="App">

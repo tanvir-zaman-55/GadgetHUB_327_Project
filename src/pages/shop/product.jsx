@@ -1,25 +1,50 @@
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 
-import { ShopContext } from "../../context/shop_context";
-export const Product = (props) => {
-  const { id, productName, price, rating, productImage } = props.data;
-  const { addToCart, cartItems } = useContext(ShopContext);
+// import { ShopContext } from "../../context/shop_context";
+// export const Product = (props) => {
+//   const { id, productName, price, rating, productImage } = props.data;
+//   const { addToCart, cartItems } = useContext(ShopContext);
 
  
-  const cartItemCount = cartItems[id];
-  return (
-    <div className="product">
-      <img src={productImage} />
-        <div className="description">
-            <p>
-            <b>{productName}</b>
-            </p>
-            <p> ${price}</p>
-            <p className="rating">⭐️ {rating}/5</p>
-      </div>
-      <button className="addToCartBttn" onClick={() => addToCart(id)}>
-        Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
-      </button>
-    </div>
-  );
+//   const cartItemCount = cartItems[id];
+//   return (
+//     <div className="product">
+//       <img src={productImage} />
+//         <div className="description">
+//             <p>
+//             <b>{productName}</b>
+//             </p>
+//             <p> ${price}</p>
+//             <p className="rating">⭐️ {rating}/5</p>
+//       </div>
+//       <button className="addToCartBttn" onClick={() => addToCart(id)}>
+//         Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
+//       </button>
+//     </div>
+//   );
+// };
+import React, { useContext } from "react";
+import { ShopContext } from "../../context/shop_context";
+
+export const Product = (props) => {
+    const { id, productName, price, rating, productImage } = props.data;
+    const { addToCart, cartItems } = useContext(ShopContext);
+
+    const cartItemCount = cartItems[id];
+
+    return (
+        <div className="Product">
+            <img src={productImage} alt={productName} />
+            <div className="Description">
+                <p>
+                    <b>{productName}</b>
+                </p>
+                <p> ${price.toFixed(2)}</p>
+                <p className="rating">⭐️ {rating}/5</p>
+            </div>
+            <button className="addToCartBttn" onClick={() => addToCart(id)}>
+                Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
+            </button>
+        </div>
+    );
 };

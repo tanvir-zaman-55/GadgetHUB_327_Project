@@ -6,7 +6,11 @@ import { CartItem } from "./cart_item";
 import { useNavigate } from "react-router-dom";
 
 import "./cart.css"; 
-
+/**
+ * Cart component that displays items in the shopping cart and handles checkout.
+ * @component
+ * @returns {JSX.Element} The rendered Cart component.
+ */
 export const Cart = () => {
     const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
     const totalAmount = getTotalCartAmount();

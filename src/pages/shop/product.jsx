@@ -1,35 +1,42 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop_context";
-/**
- * Product component to display product details and allow adding to cart.
- * @component
- * @param {Object} props - The properties passed to the component.
- * @param {Object} props.data - The product data.
- * @param {number} props.data.id - The unique identifier for the product.
- * @param {string} props.data.productName - The name of the product.
- * @param {number} props.data.price - The price of the product.
- * @param {string} props.data.productImage - The image URL of the product.
- * @returns {JSX.Element} The rendered Product component.
- */
+import { FaHeart } from 'react-icons/fa'; // Import the heart icon from react-icons
+
 export const Product = (props) => {
-    const { id, productName, price, rating, productImage } = props.data;
-    const { addToCart, cartItems } = useContext(ShopContext);
+  const { id, productName, price, rating, productImage } = props.data;
+  const { addToCart, addToWishlist, removeFromWishlist, wishlist } = useContext(ShopContext); // Get addToWishlist and removeFromWishlist functions from context
+  const isInWishlist = wishlist.includes(id); // Check if the product is already in the wishlist
 
-    const cartItemCount = cartItems[id];
+  const handleAddToCart = () => {
+    addToCart(id);
+  };
 
-    return (
-        <div className="Product">
-            <img src={productImage} alt={productName} />
-            <div className="Description">
-                <p>
-                    <b>{productName}</b>
-                </p>
-                <p> ${price.toFixed(2)}</p>
-                <p className="rating">⭐️ {rating}/5</p>
-            </div>
-            <button className="addToCartBttn" onClick={() => addToCart(id)}>
-                Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}
-            </button>
-        </div>
-    );
+  const handleToggleWishlist = () => {
+    if (isInWishlist) {
+      removeFromWishlist(id); // If already in wishlist, remove it
+    } else {
+      addToWishlist(id); // If not in wishlist, add it
+    }
+  };
+
+  return (
+    <div className="product">
+      <img src={productImage} alt={productName} />
+      <div className="description">
+        <p>
+          <b>{productName}</b>
+        </p>
+        <p>${price}</p>
+        <p className="rating">⭐️ {rating}/5</p>
+      </div>
+      <div>
+        <button className="addToCartBttn" onClick={handleAddToCart}>
+          Add To Cart
+        </button>
+        <button className="wishlistButton" onClick={handleToggleWishlist}>
+          <FaHeart color={isInWishlist ? 'red' : 'gray'} />
+        </button>
+      </div>
+    </div>
+  );
 };

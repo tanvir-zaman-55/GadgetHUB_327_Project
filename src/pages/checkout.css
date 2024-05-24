@@ -1,0 +1,123 @@
+/* Styles for navigation menu */
+nav ul {
+  /* Remove default list styles and center the navigation items */
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for navigation menu items */
+nav ul li {
+  /* Add spacing between navigation items */
+  margin: 0 20px;
+}
+
+/* Styles for navigation links */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Styles for icons */
+.icons {
+  /* Position icons in the top right corner */
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+/* Styles for individual icons */
+.icons i {
+  margin-left: 20px;
+  color: white;
+}
+
+/* Styles for main content */
+main {
+  /* Padding for the main content area */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styles for checkout container */
+.checkout-container {
+  /* Container for the checkout section, using flexbox for layout */
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Add gap between elements */
+}
+
+/* Styles for billing and shipping sections */
+.billing-shipping, .order-summary {
+  background-color: #f9f9f9; /* Background color */
+  padding: 20px; /* Padding */
+  border-radius: 8px; /* Rounded corners */
+  width: 45%; /* Fixed width */
+}
+
+/* Styles for individual form fields */
+.billing-shipping form div {
+  margin-bottom: 15px; /* Add bottom margin */
+  text-align: left; /* Align text to the left */
+}
+
+/* Styles for form labels */
+.billing-shipping label {
+  display: block; /* Display as block element */
+  margin-bottom: 5px; /* Add bottom margin */
+}
+
+/* Styles for form inputs */
+.billing-shipping input {
+  width: 100%; /* Take full width */
+  padding: 8px; /* Padding */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Styles for order summary titles */
+.order-summary h2, .order-summary h3 {
+  text-align: left; /* Align text to the left */
+}
+
+/* Styles for order details */
+.order-details {
+  text-align: left; /* Align text to the left */
+}
+
+/* Styles for individual order items */
+.order-item {
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Space between elements */
+  padding: 8px 0; /* Padding */
+}
+
+/* Styles for total order item */
+.order-item.total {
+  font-weight: bold; /* Bold font weight */
+}
+
+/* Styles for payment method section */
+.payment-method {
+  margin-top: 20px; /* Add top margin */
+}
+
+/* Styles for payment method labels */
+.payment-method label {
+  display: block; /* Display as block element */
+  margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Styles for place order button */
+.place-order-btn {
+  background-color: #007bff; /* Background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Hover styles for place order button */
+.place-order-btn:hover {
+  background-color: #0056b3; /* Background color on hover */
+}

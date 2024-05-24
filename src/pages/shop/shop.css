@@ -1,9 +1,9 @@
-.ShopTitle {
+.shopTitle {
   margin-top: 100px;
   text-align: center;
   font-size: 40px;
 }
-.Products {
+.products {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
@@ -12,7 +12,7 @@
 }
 
 
-.Product {
+.product {
   border-radius: 15px;
   width: 200px;
   height: 250px;
@@ -24,7 +24,7 @@
 }
 
 
-.Product img {
+.product img {
   width: 200px;
 }
 
@@ -32,12 +32,12 @@
   color: rgb(212, 181, 4);
 }
 
-.Product .Description {
+.product .description {
   text-align: center;
 }
 
 
-.Product:hover {
+.product:hover {
   transition: 0.3s ease-in;
   cursor: pointer;
 }
@@ -61,7 +61,7 @@
   cursor: pointer;
 }
 
-.Search{
+.search{
  
   display: flex;
   justify-content: center;

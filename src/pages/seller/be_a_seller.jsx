@@ -34,7 +34,7 @@ export const Seller = () => {
             id: Date.now(), // Generate a unique id
             productName,
             price: parseFloat(price),
-            productCategory,
+            category: productCategory,
             productImage: base64Image, // Set productImage as base64 string
         };
 

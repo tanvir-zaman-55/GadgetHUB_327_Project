@@ -18,7 +18,7 @@ export const PRODUCTS = [
         productName: "IPhone",
         price: 999.0,
         rating: 0,
-        category: "phone",
+        category: "phones",
         productImage: product1,
     },
     {
@@ -26,7 +26,7 @@ export const PRODUCTS = [
         productName: "Macbook Pro 2022 (M1)",
         price: 1999.0,
         rating: 0,
-        category: "computer",
+        category: "computers",
         productImage: product2,
     },
     {
@@ -34,7 +34,7 @@ export const PRODUCTS = [
         productName: "Cannon M50 Camera",
         price: 699.0,
         rating: 0,
-        category: "camera",
+        category: "cameras",
         productImage: product3,
     },
     {
@@ -50,7 +50,7 @@ export const PRODUCTS = [
         productName: "PlayStation 4",
         price: 329.99,
         rating: 0,
-        category: "console",
+        category: "consoles",
         productImage: product5,
     },
     {
@@ -71,10 +71,10 @@ export const PRODUCTS = [
     },
     {
         id: 8,
-        productName: "Dji Spark Drown",
+        productName: "Dji Spark Drone",
         price: 279.99,
         rating: 0,
-        category: "drone",
+        category: "drones",
         productImage: product8,
     },
     {
@@ -90,7 +90,7 @@ export const PRODUCTS = [
         productName: "Samsung S21",
         price: 799.99,
         rating: 0,
-        category: "phone",
+        category: "phones",
         productImage: product10,
     },
     {
@@ -98,7 +98,7 @@ export const PRODUCTS = [
         productName: "Nintendo Switch",
         price: 399.99,
         rating: 0,
-        category: "console",
+        category: "consoles",
         productImage: product11,
     },
 ];

@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./categories.css"; // Updated CSS import
 import { PRODUCTS } from "../../products";
 
-export default function Categories() {
-    const [selectedCategory, setSelectedCategory] = useState("all");
+export default function Categories({setSelectedCategory, selectedCategory}) {
 
     const handleCategoryChange = (event) => {
         setSelectedCategory(event.target.value);
     }
-
+    useEffect(()=>{console.log(selectedCategory)},[selectedCategory])
     return (
-        <div className="SidebarCategory"> {/* Updated class name */}
+        <div className="SidebarCategory">
             <h2>Category</h2>
             <div className="SidebarItems"> 
                 <label>
@@ -52,11 +51,11 @@ export default function Categories() {
                 <label>
                     <input 
                         type="radio" 
-                        value="lights" 
-                        checked={selectedCategory === "lights"} 
+                        value="consoles" 
+                        checked={selectedCategory === "consoles"} 
                         onChange={handleCategoryChange}
                     />
-                    Lights
+                    Console
                 </label>
             </div>
         </div>

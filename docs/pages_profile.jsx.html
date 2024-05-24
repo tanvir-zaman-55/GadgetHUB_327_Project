@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/profile.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/profile.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./profile.css";
+
+/**
+ * Profile component displays user profile information.
+ *
+ * @component
+ * @example
+ * return (
+ *   &lt;Profile />
+ * )
+ */
+export const Profile = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  /**
+   * Handles user logout by clearing session storage and redirecting to the login page.
+   */
+  const handleLogout = () => {
+    sessionStorage.removeItem("user");
+    window.location.href = "/login";
+  };
+
+  if (!user) {
+    return &lt;div>Loading...&lt;/div>;
+  }
+
+  return (
+    &lt;div>
+      &lt;section className="bg-light">
+        &lt;div className="container">
+          &lt;div className="row">
+            &lt;div className="col-lg-12 mb-4 mb-sm-5">
+              &lt;div className="card card-style1 border-0">
+                &lt;div className="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                  &lt;div className="row align-items-center">
+                    &lt;div className="col-lg-6 mb-4 mb-lg-0">
+                      &lt;img
+                        src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                        alt="User Avatar"
+                        className="img-fluid"
+                      />
+                    &lt;/div>
+                    &lt;div className="col-lg-6 px-xl-10">
+                      &lt;div className="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                        &lt;h3 className="h2 text-white mb-0">{user.name}&lt;/h3>
+                        &lt;span className="text-primary">{user.userType.charAt(0).toUpperCase() + user.userType.slice(1)}&lt;/span>
+                      &lt;/div>
+                      &lt;ul className="list-unstyled mb-1-9">
+                        &lt;li className="mb-2 mb-xl-3 display-28">
+                          &lt;span className="display-26 text-secondary me-2 font-weight-600">
+                            Email:
+                          &lt;/span>
+                          {user.email}
+                        &lt;/li>
+                        &lt;li className="mb-2 mb-xl-3 display-28">
+                          &lt;span className="display-26 text-secondary me-2 font-weight-600">
+                            Phone:
+                          &lt;/span>
+                          {user.phone}
+                        &lt;/li>
+                      &lt;/ul>
+                    &lt;/div>
+                  &lt;/div>
+                &lt;/div>
+              &lt;/div>
+            &lt;/div>
+            {user.userType === "customer" &amp;&amp; (
+              &lt;>
+                &lt;div className="col-lg-12 mb-4 mb-sm-5">
+                  &lt;div>
+                    &lt;span className="section-title text-primary mb-3 mb-sm-4">
+                      Tracking Info
+                    &lt;/span>
+                    {user.trackingInfo.map((item) => (
+                      &lt;p key={item.orderId}>
+                        Order ID: {item.orderId}, Status: {item.status}, Date:{" "}
+                        {item.date}
+                      &lt;/p>
+                    ))}
+                  &lt;/div>
+                &lt;/div>
+                &lt;div className="col-lg-12 mb-4 mb-sm-5">
+                  &lt;div>
+                    &lt;span className="section-title text-primary mb-3 mb-sm-4">
+                      Wishlist
+                    &lt;/span>
+                    {user.wishlist.map((item) => (
+                      &lt;p key={item.productId}>
+                        Product: {item.productName}
+                      &lt;/p>
+                    ))}
+                  &lt;/div>
+                &lt;/div>
+              &lt;/>
+            )}
+            {user.userType === "seller" &amp;&amp; (
+              &lt;>
+                &lt;div className="col-lg-12 mb-4 mb-sm-5">
+                  &lt;div>
+                    &lt;span className="section-title text-primary mb-3 mb-sm-4">
+                      Products
+                    &lt;/span>
+                    {user.products.map((item) => (
+                      &lt;p key={item.productId}>
+                        Product: {item.productName}, Date: {item.date}
+                      &lt;/p>
+                    ))}
+                  &lt;/div>
+                &lt;/div>
+              &lt;/>
+            )}
+          &lt;/div>
+          &lt;div className="mt-4">
+            &lt;button className="btn btn-danger" onClick={handleLogout}>
+              Logout
+            &lt;/button>
+          &lt;/div>
+        &lt;/div>
+      &lt;/section>
+    &lt;/div>
+  );
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#Profile">Profile</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Fri May 24 2024 14:51:43 GMT+0600 (Bangladesh Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

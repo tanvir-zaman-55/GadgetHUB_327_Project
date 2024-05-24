@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./price.css";
 
-export default function Price() {
-    const [selectedPriceRange, setSelectedPriceRange] = useState("all");
+export default function Price({setSelectedPrice, selectedPrice}) {
+
 
     const handlePriceRangeChange = (event) => {
-        setSelectedPriceRange(event.target.value);
+        setSelectedPrice(event.target.value);
     }
 
     return (
@@ -16,7 +16,7 @@ export default function Price() {
                     <input 
                         type="radio" 
                         value="all" 
-                        checked={selectedPriceRange === "all"} 
+                        checked={selectedPrice === "all"} 
                         onChange={handlePriceRangeChange}
                     />
                     All
@@ -25,7 +25,7 @@ export default function Price() {
                     <input 
                         type="radio" 
                         value="0-100" 
-                        checked={selectedPriceRange === "0-100"} 
+                        checked={selectedPrice === "0-100"} 
                         onChange={handlePriceRangeChange}
                     />
                     $0 - $100
@@ -34,7 +34,7 @@ export default function Price() {
                     <input 
                         type="radio" 
                         value="100-500" 
-                        checked={selectedPriceRange === "100-500"} 
+                        checked={selectedPrice === "100-500"} 
                         onChange={handlePriceRangeChange}
                     />
                     $100 - $500
@@ -43,7 +43,7 @@ export default function Price() {
                     <input 
                         type="radio" 
                         value="500-1000" 
-                        checked={selectedPriceRange === "500-1000"} 
+                        checked={selectedPrice === "500-1000"} 
                         onChange={handlePriceRangeChange}
                     />
                     $500 - $1000
@@ -52,7 +52,7 @@ export default function Price() {
                     <input 
                         type="radio" 
                         value="1000-5000" 
-                        checked={selectedPriceRange === "1000-5000"} 
+                        checked={selectedPrice === "1000-5000"} 
                         onChange={handlePriceRangeChange}
                     />
                     $1000 - $5000

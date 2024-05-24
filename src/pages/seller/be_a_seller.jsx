@@ -10,6 +10,7 @@ import { useProducts } from "../../products";
 export const Seller = () => {
     const { addProduct } = useContext(ShopContext);
     const [productName, setProductName] = useState("");
+    const [productCategory, setProductCategory] = useState("");
     const [price, setPrice] = useState("");
     const [productImage, setProductImage] = useState(null);
 
@@ -33,6 +34,7 @@ export const Seller = () => {
             id: Date.now(), // Generate a unique id
             productName,
             price: parseFloat(price),
+            productCategory,
             productImage: base64Image, // Set productImage as base64 string
         };
 
@@ -41,6 +43,7 @@ export const Seller = () => {
 
         // Reset form fields
         setProductName("");
+        setProductCategory("");
         setPrice("");
         setProductImage(null);
     };
@@ -86,6 +89,16 @@ export const Seller = () => {
                         id="price"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
+                        required
+                    />
+                </div>
+                <div className="FormGroup"> {/* PascalCase for CSS class name */}
+                    <label htmlFor="productName"><h5>Category:</h5></label>
+                    <input
+                        type="text"
+                        id="productCategory"
+                        value={productCategory}
+                        onChange={(e) => setProductCategory(e.target.value)}
                         required
                     />
                 </div>

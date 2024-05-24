@@ -1,62 +1,63 @@
-import React, {useState} from "react";
-import "./price.css"
-export default function Price(){
-    const [selectedCategory, setSelectedCategory] = useState("all");
-    
-    const handleCategoryChange = (event) => {
-        setSelectedCategory(event.target.value);
+import React, { useState } from "react";
+import "./price.css";
+
+export default function Price() {
+    const [selectedPriceRange, setSelectedPriceRange] = useState("all");
+
+    const handlePriceRangeChange = (event) => {
+        setSelectedPriceRange(event.target.value);
     }
-    
-    return(
-       <div className="sidebarPrice">
-           <h2>Price</h2>
-           <div className="sidebarItems"> 
+
+    return (
+        <div className="SidebarPrice">
+            <h2>Price</h2>
+            <div className="SidebarItems"> 
                 <label>
                     <input 
                         type="radio" 
                         value="all" 
-                        checked={selectedCategory === "all"} 
-                        onChange={handleCategoryChange}
-                        />
+                        checked={selectedPriceRange === "all"} 
+                        onChange={handlePriceRangeChange}
+                    />
                     All
                 </label>
                 <label>
                     <input 
                         type="radio" 
-                        value="phones" 
-                        checked={selectedCategory === "phones"} 
-                        onChange={handleCategoryChange}
-                        />
+                        value="0-100" 
+                        checked={selectedPriceRange === "0-100"} 
+                        onChange={handlePriceRangeChange}
+                    />
                     $0 - $100
                 </label>
                 <label>
                     <input 
                         type="radio" 
-                        value="cameras" 
-                        checked={selectedCategory === "cameras"} 
-                        onChange={handleCategoryChange}
-                        />
+                        value="100-500" 
+                        checked={selectedPriceRange === "100-500"} 
+                        onChange={handlePriceRangeChange}
+                    />
                     $100 - $500
                 </label>
                 <label>
                     <input 
                         type="radio" 
-                        value="accessories" 
-                        checked={selectedCategory === "accessories"} 
-                        onChange={handleCategoryChange}
-                        />
+                        value="500-1000" 
+                        checked={selectedPriceRange === "500-1000"} 
+                        onChange={handlePriceRangeChange}
+                    />
                     $500 - $1000
                 </label>
                 <label>
                     <input 
                         type="radio" 
-                        value="lights" 
-                        checked={selectedCategory === "lights"} 
-                        onChange={handleCategoryChange}
-                        />
+                        value="1000-5000" 
+                        checked={selectedPriceRange === "1000-5000"} 
+                        onChange={handlePriceRangeChange}
+                    />
                     $1000 - $5000
                 </label>
-           </div>
-       </div>
+            </div>
+        </div>
     );
 }

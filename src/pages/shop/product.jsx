@@ -25,7 +25,7 @@ export const Product = (props) => {
                     <b>{productName}</b>
                 </p>
                 <p> ${price.toFixed(2)}</p>
-                <p className="rating">⭐️ {rating}/5</p>
+                <p className="Rating">⭐️ {rating}/5</p>
             </div>
             <button className="addToCartBttn" onClick={() => addToCart(id)}>
                 Add To Cart {cartItemCount > 0 && <> ({cartItemCount})</>}

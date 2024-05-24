@@ -18,6 +18,7 @@ export const PRODUCTS = [
         productName: "IPhone",
         price: 999.0,
         rating: 0,
+        category: "phone",
         productImage: product1,
     },
     {
@@ -25,6 +26,7 @@ export const PRODUCTS = [
         productName: "Macbook Pro 2022 (M1)",
         price: 1999.0,
         rating: 0,
+        category: "computer",
         productImage: product2,
     },
     {
@@ -32,6 +34,7 @@ export const PRODUCTS = [
         productName: "Cannon M50 Camera",
         price: 699.0,
         rating: 0,
+        category: "camera",
         productImage: product3,
     },
     {
@@ -39,6 +42,7 @@ export const PRODUCTS = [
         productName: "Apple Airpods",
         price: 250.0,
         rating: 0,
+        category: "accessories",
         productImage: product4,
     },
     {
@@ -46,6 +50,7 @@ export const PRODUCTS = [
         productName: "PlayStation 4",
         price: 329.99,
         rating: 0,
+        category: "console",
         productImage: product5,
     },
     {
@@ -53,6 +58,7 @@ export const PRODUCTS = [
         productName: "Syncwire USB Charger",
         price: 68.0,
         rating: 0,
+        category: "accessories",
         productImage: product6,
     },
     {
@@ -60,6 +66,7 @@ export const PRODUCTS = [
         productName: "Sonox Headphones",
         price: 120.0,
         rating: 0,
+        category: "accessories",
         productImage: product7,
     },
     {
@@ -67,6 +74,7 @@ export const PRODUCTS = [
         productName: "Dji Spark Drown",
         price: 279.99,
         rating: 0,
+        category: "drone",
         productImage: product8,
     },
     {
@@ -74,6 +82,7 @@ export const PRODUCTS = [
         productName: "Amazon Echo Speaker", 
         price: 199.0,
         rating: 0,
+        category: "accessories",
         productImage: product9,
     },
     {
@@ -81,6 +90,7 @@ export const PRODUCTS = [
         productName: "Samsung S21",
         price: 799.99,
         rating: 0,
+        category: "phone",
         productImage: product10,
     },
     {
@@ -88,6 +98,7 @@ export const PRODUCTS = [
         productName: "Nintendo Switch",
         price: 399.99,
         rating: 0,
+        category: "console",
         productImage: product11,
     },
 ];

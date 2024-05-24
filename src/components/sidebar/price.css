@@ -1,0 +1,9 @@
+.SidebarCategory {
+    margin-top: 50px;
+    }
+.SidebarItems {
+     margin: 20px;
+     display: flex;
+     flex-direction: column;
+        
+    }

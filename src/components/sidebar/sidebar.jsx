@@ -5,7 +5,7 @@ import Price from "./price";
 
 export const Sidebar = () => {
     return (
-        <section className="sidebar">
+        <section className="Sidebar">
             <Categories/>
             <Price/>
         </section>

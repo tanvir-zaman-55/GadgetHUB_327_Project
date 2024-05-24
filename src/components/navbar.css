@@ -24,3 +24,13 @@
   font-weight: bold;
   
 }
+
+.navbar .icons {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .icons a {
+  margin-left: 15px;
+  color: inherit; /* Ensure it inherits the color from parent or is styled as needed */
+}

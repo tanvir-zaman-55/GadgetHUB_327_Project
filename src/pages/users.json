@@ -1,0 +1,157 @@
+{
+    "sellers": [
+      {
+        "id": 1,
+        "name": "Amelia Jones",
+        "email": "hasanmumtazsdp@gmail.com",
+        "phone": "123-456-7890",
+        "trackingInfo": [],
+        "products": [
+          { "productId": "001", "productName": "Smart Wallet", "date": "2024-05-23" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "David Lee",
+        "email": "gmailamiakalim123l.com",
+        "phone": "123-456-7891",
+        "trackingInfo": [],
+        "products": [
+          { "productId": "002", "productName": "Wireless Headphones", "date": "2024-05-23" }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Sakura Tanaka",
+        "email": "sakura.tanaka@kimonostore.jp",
+        "phone": "+81-123-456-7890",  
+        "trackingInfo": [],
+        "products": [
+          { "productId": "003", "productName": "Iphone15 Pro Max", "date": "2024-05-23" }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Étienne Dubois",
+        "email": "etienne.dubois@frenchbakery.fr",
+        "phone": "+33-123-456-789",    
+        "trackingInfo": [],
+        "products": [
+          { "productId": "004", "productName": " Iphone15 Pro Max", "date": "2024-05-23" }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Maria Garcia",
+        "email": "maria.garcia@plantshop.mx",
+        "phone": "+52-123-456-7890",    
+        "trackingInfo": [],
+        "products": [
+          { "productId": "005", "productName": "Iphone15 Pro Max  ", "date": "2024-05-23" }
+        ]
+      }
+    ],
+    "customers": [
+      {
+        "id": 1,
+        "name": "Emily Walker",
+        "email": "emily.walker1985@gmail.com",
+        "phone": "987-654-3210",
+        "trackingInfo": [
+          { "orderId": "12345", "status": "Shipped", "date": "2024-05-23" }
+        ],
+        "wishlist": [
+          { "productId": "006", "productName": "  Iphone15 Pro Max" }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Michael Brown",
+        "email": "michael.brown.tech@yahoo.com",
+        "phone": "987-654-3211",
+        "trackingInfo": [
+          { "orderId": "12346", "status": "Delivered", "date": "2024-05-23" }
+        ],
+        "wishlist": [
+          { "productId": "007", "productName": "Gaming Headset" }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Li Wang",
+        "email": "li.wang2000@hotmail.com",
+        "phone": "+86-123-456-7890", 
+        "trackingInfo": [],
+        "wishlist": [
+          { "productId": "008", "productName": "  Iphone15 Pro Max" }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Omar Khan",
+        "email": "omar.khan@artgallery.com",
+        "phone": "+91-123-456-7890",  
+        "trackingInfo": [],
+        "wishlist": [
+          { "productId": "009", "productName": " Iphone15 Pro Max" }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Anna Schmidt",
+        "email": "anna.schmidt@bookstore.de",
+        "phone": "+49-123-456-789",    
+        "trackingInfo": [
+          { "orderId": "12347", "status": "Awaiting Shipment", "date": "2024-05-23" }
+        ],
+        "wishlist": [
+          { "productId": "010", "productName": "  Iphone15 Pro Max" }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Carlos Hernandez",
+        "email": "carlos.hernandez@guitarstore.es",
+        "phone": "+34-123-456-789",    
+        "trackingInfo": [],
+        "wishlist": [
+          { "productId": "011", "productName": " Iphone15 Pro Max" }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Aisha Hassan",
+        "email": "aisha.hassan@jewelryshop.ae",
+        "phone": "+971-123-456-7890",  
+        "trackingInfo": [
+          { "orderId": "12348", "status": "In Transit", "date": "2024-05-22" }
+        ],
+        "wishlist": [
+          { "productId": "012", "productName": " Iphone15 Pro Max" }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Peter Ivanov",
+        "email": "peter.ivanov@outdoorshop.ru",
+        "phone": "+7-123-456-7890", 
+        "trackingInfo": [],
+        "wishlist": [
+          { "productId": "013", "productName": " Iphone15 Pro Max" }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Marie Dubois",
+        "email": "marie.dubois@fashionstore.fr",
+        "phone": "+33-123-456-7890",  
+        "trackingInfo": [
+          { "orderId": "12349", "status": "Delivered", "date": "2024-05-21" }
+        ],
+        "wishlist": [
+          { "productId": "014", "productName": " Iphone15 Pro Max" }
+        ]
+      }
+    ]
+  }
+  

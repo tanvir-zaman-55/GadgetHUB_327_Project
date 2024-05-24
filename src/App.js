@@ -1,36 +1,30 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/navbar";
-import { Sidebar } from "./components/sidebar/sidebar";
 import { Shop } from "./pages/shop/shop";
 import { Contact } from "./pages/contact";
-import { ShopContextProvider } from "./context/shop_context";
-import { Seller } from "./pages/seller/be_a_seller";
-import { Cart } from "./pages/cart/cart";
-import { ProductProvider } from "./products";
+import { Profile } from "./pages/profile";
+import { Login } from "./pages/login";
+
 /**
- * Main component representing the entire application.
- * @returns {JSX.Element} The rendered App component.
+ * The main App component that sets up the routes and the navigation bar for the application.
+ * @component
+ * @returns {JSX.Element} The rendered component.
  */
 function App() {
-    return (
-        <div className="App">
-            <ShopContextProvider>
-                <Router>
-                    <Navbar />
-                    <ProductProvider>
-                        <Sidebar />
-                        <Routes>
-                            <Route path="/" element={<Shop />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route path="/cart" element={<Cart />} />
-                            <Route path="/seller" element={<Seller />} /> 
-                        </Routes>
-                    </ProductProvider>
-                </Router>
-            </ShopContextProvider>
-        </div>
-    );
+  return (
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Shop />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

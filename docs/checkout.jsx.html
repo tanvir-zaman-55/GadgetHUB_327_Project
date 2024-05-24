@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: checkout.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: checkout.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useContext, useState } from 'react';
+import './checkout.css';
+import { ShopContext } from '../context/shop_context';
+
+/**
+ * Checkout component to handle the checkout process.
+ * 
+ * @returns {JSX.Element} The rendered component.
+ */
+export const Checkout = () => {
+  // Destructuring cartItems, products, and getTotalCartAmount from ShopContext
+  const { cartItems, products, getTotalCartAmount } = useContext(ShopContext);
+  // State for shipping cost
+  const [shippingCost, setShippingCost] = useState(60);
+  // State for selected payment method
+  const [paymentMethod, setPaymentMethod] = useState('SSLCommerz');
+
+  // Calculate subtotal
+  const subtotal = getTotalCartAmount();
+  // Calculate total including shipping
+  const total = subtotal + shippingCost;
+
+  return (
+    &lt;div className="App">
+      &lt;main>
+        &lt;h1>CHECKOUT&lt;/h1>
+        &lt;div className="checkout-container">
+          &lt;div className="billing-shipping">
+            &lt;h2>BILLING &amp; SHIPPING&lt;/h2>
+            &lt;form>
+              &lt;div>
+                &lt;label>First name *&lt;/label>
+                &lt;input type="text" required />
+              &lt;/div>
+              &lt;div>
+                &lt;label>Last name *&lt;/label>
+                &lt;input type="text" required />
+              &lt;/div>
+              &lt;div>
+                &lt;label>Company name (optional)&lt;/label>
+                &lt;input type="text" />
+              &lt;/div>
+              &lt;div>
+                &lt;label>Country / Region *&lt;/label>
+                &lt;input type="text" required defaultValue="Bangladesh" />
+              &lt;/div>
+              &lt;div>
+                &lt;label>Street address *&lt;/label>
+                &lt;input type="text" placeholder="House number and street name" required />
+                &lt;input type="text" placeholder="Apartment, suite, unit, etc. (optional)" />
+              &lt;/div>
+              &lt;div>
+                &lt;label>Town / City *&lt;/label>
+                &lt;input type="text" required />
+              &lt;/div>
+            &lt;/form>
+          &lt;/div>
+          &lt;div className="order-summary">
+            &lt;h2>YOUR ORDER&lt;/h2>
+            &lt;div className="order-details">
+              {products.map((product) => (
+                cartItems[product.id] > 0 &amp;&amp; (
+                  &lt;div key={product.id} className="order-item">
+                    &lt;span>{product.productName} x {cartItems[product.id]}&lt;/span>
+                    &lt;span>{product.price * cartItems[product.id]}৳&lt;/span>
+                  &lt;/div>
+                )
+              ))}
+              &lt;div className="order-item">
+                &lt;span>Subtotal&lt;/span>
+                &lt;span>{subtotal}৳&lt;/span>
+              &lt;/div>
+              &lt;div className="order-item">
+                &lt;span>Shipping&lt;/span>
+                &lt;span>{shippingCost}৳&lt;/span>
+              &lt;/div>
+              &lt;div className="order-item total">
+                &lt;span>Total&lt;/span>
+                &lt;span>{total}৳&lt;/span>
+              &lt;/div>
+              &lt;div className="payment-method">
+                &lt;h3>Payment Method&lt;/h3>
+                &lt;label>
+                  &lt;input
+                    type="radio"
+                    value="SSLCommerz"
+                    checked={paymentMethod === 'SSLCommerz'}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                  />
+                  Pay Online - SSLCommerz
+                &lt;/label>
+                &lt;label>
+                  &lt;input
+                    type="radio"
+                    value="Cash on delivery"
+                    checked={paymentMethod === 'Cash on delivery'}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                  />
+                  Cash on delivery
+                &lt;/label>
+                &lt;label>
+                  &lt;input
+                    type="radio"
+                    value="bKash Payment Gateway"
+                    checked={paymentMethod === 'bKash Payment Gateway'}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                  />
+                  bKash Payment Gateway
+                &lt;/label>
+              &lt;/div>
+            &lt;/div>
+            &lt;button className="place-order-btn">PLACE ORDER&lt;/button>
+          &lt;/div>
+        &lt;/div>
+      &lt;/main>
+    &lt;/div>
+  );
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Checkout">Checkout</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Fri May 24 2024 19:27:00 GMT+0600 (Bangladesh Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
